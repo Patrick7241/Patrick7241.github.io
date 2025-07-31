@@ -1,0 +1,137 @@
+:root {
+  --text-primary: #1a1a1a;
+  --text-secondary: #666;
+  --bg-primary: #fff;
+  --bg-secondary: #f5f5f7;
+  --content-max-width: 1200px;
+  --mobile-breakpoint: 768px;
+  /* 添加现代设计变量 */
+  --gradient-primary: linear-gradient(135deg, #0071e3 0%, #5ac8fa 100%);
+  --gradient-secondary: linear-gradient(135deg, #f5f5f7 0%, #eaeaea 100%);
+  --shadow-soft: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  --shadow-hard: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
+  --transition-standard: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 2rem;
+}
+
+.dark {
+  --text-primary: #f5f5f7;
+  --text-secondary: #d2d2d7;
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2c2c2e;
+  --gradient-secondary: linear-gradient(135deg, #2c2c2e 0%, #3a3a3c 100%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+::selection {
+  background: #0071e3;
+  color: #fff;
+}
+/* 添加滚动条主题支持 */
+::-webkit-scrollbar {
+  width: 8px;
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 4px;
+}
+
+.prose {
+  max-width: 65ch;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.prose h1, .prose h2, .prose h3 {
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose p {
+  margin-bottom: 1.25rem;
+}
+
+.prose code {
+  font-family: 'Fira Code', monospace;
+}
+
+/* 添加响应式基础样式 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* 响应式字体大小 */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  .prose {
+    font-size: 1rem;
+    padding: 0 8px;
+  }
+
+  .prose h1 {
+    font-size: 1.8rem;
+  }
+
+  .prose h2 {
+    font-size: 1.5rem;
+  }
+
+  .prose h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* 添加3D变换基础样式 */
+.transform-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.rotate-on-hover {
+  transition: transform 0.5s ease;
+}
+
+.rotate-on-hover:hover {
+  transform: rotateY(5deg) translateZ(10px);
+}
+
+/* 现代滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 10px;
+  transition: var(--transition-standard);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primaryColor);
+}
